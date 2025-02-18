@@ -22,10 +22,10 @@ requirements:
   build:
     - patch  # [not win]
     - m2-patch  # [win]
+    - setuptools
   host:
     - python
     - pip
-    - setuptools
     - wheel
   run:
     - python

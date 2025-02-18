@@ -25,6 +25,7 @@ requirements:
   host:
     - python
     - pip
+    - wheel
   run:
     - python
     # Author is using hard pinned dependencies, relaxing them here as testing shows no issues

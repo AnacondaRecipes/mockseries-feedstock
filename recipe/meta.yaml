@@ -14,7 +14,11 @@ source:
 build:
   number: 0
   skip: True  # [py<39 or py>312]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - chcp 65001  # [win]
+    - set PYTHONUTF8=1  # [win]
+    - set PYTHONIOENCODING="UTF-8"  # [win]
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - mockseries = mockseries.main:main
 

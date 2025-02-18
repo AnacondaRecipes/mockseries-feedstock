@@ -50,10 +50,14 @@ test:
     - pip
 
 about:
-  home: http://mockseries.catheu.tech/
+  home: https://mockseries.catheu.tech/
   summary: Easy and intuitive generation of synthetic timeseries.
   license: MIT
+  license_family: MIT
   license_file: LICENSE
+  description: Easy and intuitive generation of synthetic timeseries.
+  dev_url: https://github.com/cyrilou242/mockseries/
+  doc_url: https://mockseries.catheu.tech/docs/intro/
 
 extra:
   recipe-maintainers:

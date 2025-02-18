@@ -19,6 +19,9 @@ build:
     - mockseries = mockseries.main:main
 
 requirements:
+  build:
+    - patch  # [not win]
+    - m2-patch  # [win]
   host:
     - python
     - pip

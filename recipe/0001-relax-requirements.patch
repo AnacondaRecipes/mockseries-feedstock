@@ -1,0 +1,17 @@
+diff --git a/setup.py b/setup.py
+index 098a742..2428e09 100644
+--- a/setup.py
++++ b/setup.py
+@@ -15,9 +15,9 @@ setup(
+     author_email="cdecatheu@hey.com",
+     description="Easy and intuitive generation of synthetic timeseries.",
+     install_requires=[
+-        "matplotlib==3.7.1",
+-        "numpy==1.26.3",
+-        "scipy==1.11.4",
++        "matplotlib>=3.7.1",
++        "numpy>=1.26.3",
++        "scipy>=1.11.4",
+     ],
+     project_urls={
+         "Bug Tracker": "https://github.com/cyrilou242/mockseries/issues",

@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [py<39 or py>312]
+  skip: True  # [py<39]
   script:
     - chcp 65001  # [win]
     - set PYTHONUTF8=1  # [win]

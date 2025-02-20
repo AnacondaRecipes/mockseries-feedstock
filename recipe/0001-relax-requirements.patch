@@ -1,5 +1,5 @@
 diff --git a/setup.py b/setup.py
-index 098a742..2428e09 100644
+index 098a742..897f25f 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -15,9 +15,9 @@ setup(
@@ -15,3 +15,12 @@ index 098a742..2428e09 100644
      ],
      project_urls={
          "Bug Tracker": "https://github.com/cyrilou242/mockseries/issues",
+@@ -44,7 +44,7 @@ setup(
+         "Operating System :: Unix",
+         "Operating System :: MacOS",
+     ],
+-    python_requires=">=3.9,<3.13",
++    python_requires=">=3.9,<=3.13",
+     entry_points={
+         "console_scripts": [
+             "mockseries = mockseries.main:main",

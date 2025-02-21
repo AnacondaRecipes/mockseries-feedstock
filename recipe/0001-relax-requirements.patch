@@ -20,7 +20,7 @@ index 098a742..897f25f 100644
          "Operating System :: MacOS",
      ],
 -    python_requires=">=3.9,<3.13",
-+    python_requires=">=3.9,<=3.13",
++    python_requires=">=3.9,<4",
      entry_points={
          "console_scripts": [
              "mockseries = mockseries.main:main",

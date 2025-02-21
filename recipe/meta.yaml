@@ -13,6 +13,7 @@ source:
 
 build:
   number: 0
+  # Relaxed python requirements to build for py313
   skip: True  # [py<39]
   script:
     - chcp 65001  # [win]

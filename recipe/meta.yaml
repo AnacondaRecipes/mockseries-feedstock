@@ -1,0 +1,65 @@
+{% set name = "mockseries" %}
+{% set version = "0.3.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mockseries-{{ version }}.tar.gz
+  sha256: dcf310c441590a93df5f025245dcfbeb8e38048f9e27d73b4d66475dd0eeb8cd
+  patches:
+    - 0001-relax-requirements.patch
+
+build:
+  number: 0
+  # Relaxed python requirements to build for py313
+  skip: True  # [py<39]
+  script:
+    - chcp 65001  # [win]
+    - set PYTHONUTF8=1  # [win]
+    - set PYTHONIOENCODING="UTF-8"  # [win]
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  entry_points:
+    - mockseries = mockseries.main:main
+
+requirements:
+  build:
+    - patch  # [not win]
+    - m2-patch  # [win]
+    - setuptools
+  host:
+    - python
+    - pip
+    - wheel
+  run:
+    - python
+    # Author is using hard pinned dependencies, relaxing them here as testing shows no issues
+    - matplotlib-base >=3.7.1,<4
+    - numpy >=1.26.3
+    - scipy >=1.11.4,<2
+
+test:
+  imports:
+    - mockseries
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - mockseries --help
+  requires:
+    - python
+    - pip
+
+about:
+  home: https://mockseries.catheu.tech/
+  summary: Easy and intuitive generation of synthetic timeseries.
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  description: Easy and intuitive generation of synthetic timeseries.
+  dev_url: https://github.com/cyrilou242/mockseries/
+  doc_url: https://mockseries.catheu.tech/docs/intro/
+
+extra:
+  recipe-maintainers:
+    - Cansisti
